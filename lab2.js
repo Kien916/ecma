@@ -26,7 +26,7 @@ console.log(student);
 const user = {
   firstName: "Nguyen",
   lastName: "Van A",
-  product: "Laptop Dell XPS",
+  product: "Laptop Dell XPS1",
   price: 25000000,
   orderDate: "2024-01-15",
 };
