@@ -43,11 +43,10 @@ const sumAll = (...number) => number.reduce((total, num) => total + num,0);
 //bai4
 const shoppingCart = (Name, ...products) => {
   return {
-    Name,  // tên khách hàng
-    products,      // danh sách sản phẩm (mảng)
-    totalItems: products.length, // tổng số sản phẩm
+    Name,
+    products,     
+    totalItems: products.length,
   };
 };
 console.log(shoppingCart("Kien", "Book", "Pen", "Notebook"));
-////
 
