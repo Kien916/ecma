@@ -41,3 +41,19 @@ function createProduct({ name, price, category = "general", inStock = true }) {
 const product = createProduct({ name: "Laptop", price: 999 });
 console.log(product);
 // { name: 'Laptop', price: 999, category: 'general', inStock: true }
+//bai5
+function delay(ms) {
+  // Your code here
+  return new Promise((resolve) => { setTimeout(resolve, ms) });
+}
+delay(2000).then(() => console.log("2 seconds passed"));
+//bai6
+function fetchMultipleData(urls) {
+  // Your code here
+  const promise = urls.map((url)=> fetch(url).then((response) => response.json()));
+  return Promise.all(promise);
+}
+
+fetchMultipleData(["https://jsonplaceholder.typicode.com/users/1", "https://jsonplaceholder.typicode.com/users/2"]).then((users) =>
+  console.log(users)
+);
