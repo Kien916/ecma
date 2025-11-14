@@ -57,3 +57,25 @@ function fetchMultipleData(urls) {
 fetchMultipleData(["https://jsonplaceholder.typicode.com/users/1", "https://jsonplaceholder.typicode.com/users/2"]).then((users) =>
   console.log(users)
 );
+//bai7
+// Viết lại hàm này sử dụng async/await
+async function processOrder(orderId) {
+  const order = await getOrder(orderId);
+  const user = await getUser(order.userId);
+  const products = await getProducts(order.productIds);
+  return { order, user, products };
+}
+processOrder(1)
+  .then((data) => console.log(data))
+  .catch((err) => console.error("Lỗi:", err));
+
+//bai8
+async function safeApiCall(apiFunction, ...args) {
+  try {
+    const result = await apiFunction(...args);
+    return result;
+  } catch (error) {
+    console.error("Lỗi khi gọi API:", error);
+    return null;
+  }
+}
